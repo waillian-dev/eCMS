@@ -1,0 +1,750 @@
+Use the following prompt to instruct a coding agent to build a **production-ready Complaint Management System** using **Expo SDK 54 + MERN Stack**.
+
+---
+
+# Prompt: Build a Complaint Management System (Expo SDK 54 + MERN Stack)
+
+## Project Overview
+
+Build a full-stack Complaint Management System that allows users to submit complaints, track their status in real time, communicate with support staff, attach evidence, receive notifications, and rate the resolution process.
+
+The system should consist of:
+
+* Mobile App (Expo SDK 54 + React Native)
+* Admin Web Portal (React)
+* Backend API (Node.js + Express.js)
+* MongoDB Database
+* Socket.io for realtime updates
+* JWT Authentication
+* Role-Based Access Control (RBAC)
+
+The application must be scalable, secure, responsive, production-ready, and follow clean architecture principles.
+
+---
+
+# Technology Stack
+
+## Mobile
+
+* Expo SDK 54
+* React Native
+* Expo Router
+* TypeScript
+* NativeWind
+* React Hook Form
+* Zod
+* TanStack Query
+* Axios
+* Expo Image Picker
+* Expo Notifications
+* Expo Secure Store
+* React Native Reanimated
+* React Native Gesture Handler
+* React Native SVG
+
+---
+
+## Admin Portal
+
+* React
+* Vite
+* TypeScript
+* TailwindCSS
+* shadcn/ui
+* React Hook Form
+* TanStack Table
+* TanStack Query
+* Chart.js
+* Recharts
+
+---
+
+## Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT
+* Bcrypt
+* Multer
+* Cloudinary or Cloudflare R2
+* Socket.io
+* Nodemailer
+* Winston Logger
+* Express Validator
+
+---
+
+## Architecture
+
+Use Clean Architecture.
+
+```
+Mobile
+
+Presentation
+Application
+Services
+Repositories
+Models
+
+Backend
+
+Controllers
+Routes
+Services
+Repositories
+Middleware
+Models
+Validators
+Utils
+
+```
+
+Follow SOLID principles.
+
+---
+
+# User Roles
+
+## Citizen / Customer
+
+Can
+
+* Register
+* Login
+* Create Complaint
+* Upload Images
+* Upload Videos
+* Upload Documents
+* View Complaint History
+* Chat with Support
+* Track Complaint Status
+* Receive Notifications
+* Rate Resolution
+
+---
+
+## Support Officer
+
+Can
+
+* View Assigned Complaints
+* Update Status
+* Reply to Customer
+* Add Internal Notes
+* Request Additional Information
+
+---
+
+## Department Manager
+
+Can
+
+* Assign Complaint
+* Reassign Complaint
+* Escalate Complaint
+* Monitor Performance
+* View Reports
+
+---
+
+## Super Admin
+
+Full system management.
+
+Can manage
+
+* Users
+* Departments
+* Categories
+* Roles
+* Permissions
+* Complaint Settings
+* SLA
+* Notifications
+
+---
+
+# Authentication
+
+Support
+
+* Email Login
+* Phone Login
+* Google Login
+* OTP Verification
+* JWT Authentication
+* Refresh Token
+* Secure Storage
+
+---
+
+# Complaint Categories
+
+Examples
+
+* Road Damage
+* Water Supply
+* Electricity
+* Internet
+* Waste Collection
+* Public Safety
+* Corruption
+* Traffic
+* Environment
+* Public Transport
+
+Admin can CRUD categories.
+
+---
+
+# Complaint Priority
+
+* Low
+* Medium
+* High
+* Critical
+
+Priority may be manually selected or auto-calculated based on category and keywords.
+
+---
+
+# Complaint Status Workflow
+
+```
+Draft
+
+↓
+
+Submitted
+
+↓
+
+Under Review
+
+↓
+
+Assigned
+
+↓
+
+In Progress
+
+↓
+
+Waiting for Customer
+
+↓
+
+Resolved
+
+↓
+
+Closed
+
+```
+
+Alternative paths
+
+```
+Rejected
+
+Cancelled
+
+Escalated
+
+Reopened
+```
+
+Every status change must be stored in history.
+
+---
+
+# Complaint Creation
+
+Fields
+
+* Complaint Number (Auto)
+* Title
+* Description
+* Category
+* Department
+* Priority
+* Location
+* GPS Coordinates
+* Address
+* Photos
+* Videos
+* Documents
+* Anonymous Option
+
+---
+
+# File Upload
+
+Support
+
+* Image
+* Video
+* PDF
+
+Features
+
+* Compression
+* Preview
+* Progress Indicator
+* Retry Upload
+* Delete Upload
+
+Store files in Cloudinary or Cloudflare R2.
+
+---
+
+# Complaint Timeline
+
+Every complaint has timeline.
+
+Example
+
+```
+Complaint Created
+
+↓
+
+Assigned to Department
+
+↓
+
+Officer Accepted
+
+↓
+
+Inspection Scheduled
+
+↓
+
+Work Started
+
+↓
+
+Resolved
+
+↓
+
+Customer Confirmed
+
+↓
+
+Closed
+```
+
+---
+
+# Chat System
+
+Realtime messaging
+
+Customer ↔ Officer
+
+Support
+
+* Text
+* Images
+* Documents
+* Read Receipts
+* Typing Indicator
+* Online Status
+
+Socket.io
+
+---
+
+# Push Notifications
+
+Expo Notifications
+
+Notify users for
+
+* Complaint Submitted
+* Assigned
+* Status Updated
+* Officer Message
+* Resolution Completed
+* Rating Request
+
+---
+
+# Dashboard
+
+Customer Dashboard
+
+* Total Complaints
+* Open
+* Closed
+* Pending
+* Recent Complaints
+* Notifications
+
+---
+
+Admin Dashboard
+
+Charts
+
+* Complaints by Category
+* Complaints by Department
+* Complaints by Status
+* Monthly Trends
+* SLA Compliance
+* Resolution Time
+* Officer Performance
+* Customer Satisfaction
+
+---
+
+# Search
+
+Support
+
+* Complaint Number
+* Customer
+* Phone
+* Email
+* Category
+* Department
+* Date
+* Status
+* Priority
+
+---
+
+# Filters
+
+* Date Range
+* Status
+* Department
+* Officer
+* Category
+* Priority
+
+---
+
+# Reports
+
+Generate
+
+* Daily
+* Weekly
+* Monthly
+* Yearly
+
+Export
+
+* Excel
+* CSV
+* PDF
+
+---
+
+# Analytics
+
+Calculate
+
+* Average Resolution Time
+* Average Response Time
+* Reopened Rate
+* Complaint Volume
+* Department Performance
+* Customer Satisfaction
+* SLA Achievement
+
+---
+
+# SLA Management
+
+Admin defines
+
+```
+Low
+
+48 Hours
+
+Medium
+
+24 Hours
+
+High
+
+8 Hours
+
+Critical
+
+2 Hours
+```
+
+Automatically highlight overdue complaints and trigger escalation rules.
+
+---
+
+# Escalation Rules
+
+If SLA exceeded
+
+```
+Officer
+
+↓
+
+Supervisor
+
+↓
+
+Department Manager
+
+↓
+
+Administrator
+```
+
+Automatic notifications.
+
+---
+
+# Rating System
+
+After complaint is closed
+
+Customer rates
+
+⭐⭐⭐⭐⭐
+
+Additional feedback
+
+```
+Resolution Quality
+
+Officer Behavior
+
+Response Speed
+
+Overall Experience
+```
+
+---
+
+# Offline Support
+
+If no internet
+
+Save complaint locally.
+
+Auto-sync when online.
+
+---
+
+# Admin Modules
+
+* User Management
+* Role Management
+* Permission Management
+* Department Management
+* Category Management
+* Complaint Management
+* SLA Settings
+* Notification Templates
+* Reports
+* Audit Logs
+* System Settings
+
+---
+
+# Audit Log
+
+Track
+
+* Login
+* Logout
+* Complaint Updates
+* Assignments
+* Status Changes
+* User Actions
+* Permission Changes
+
+---
+
+# Security
+
+* JWT
+* Refresh Tokens
+* Helmet
+* Rate Limiting
+* Input Validation
+* XSS Protection
+* Mongo Injection Protection
+* Password Hashing
+* File Validation
+* RBAC
+* API Logging
+
+---
+
+# MongoDB Collections
+
+* users
+* roles
+* permissions
+* departments
+* complaintCategories
+* complaints
+* complaintHistory
+* complaintAssignments
+* complaintMessages
+* attachments
+* notifications
+* ratings
+* auditLogs
+* systemSettings
+
+---
+
+# REST API Modules
+
+Authentication
+
+```
+POST /auth/register
+POST /auth/login
+POST /auth/logout
+POST /auth/refresh
+```
+
+Complaints
+
+```
+GET /complaints
+POST /complaints
+PUT /complaints/:id
+DELETE /complaints/:id
+GET /complaints/:id
+```
+
+Messages
+
+```
+GET /messages
+POST /messages
+```
+
+Notifications
+
+```
+GET /notifications
+PUT /notifications/read
+```
+
+Admin
+
+```
+Users
+Departments
+Roles
+Categories
+Reports
+Analytics
+```
+
+---
+
+# Mobile UI Screens
+
+Authentication
+
+* Splash
+* Login
+* Register
+* OTP
+
+Main
+
+* Home Dashboard
+* Complaint List
+* Complaint Detail
+* Create Complaint
+* Complaint Timeline
+* Chat
+* Notifications
+* Profile
+* Settings
+
+---
+
+# Admin Screens
+
+* Dashboard
+* Complaint Queue
+* Complaint Detail
+* Assign Complaint
+* Users
+* Departments
+* Categories
+* Reports
+* Analytics
+* Audit Logs
+* Settings
+
+---
+
+# UI/UX Requirements
+
+* Modern Material Design 3 inspired interface
+* Fully responsive layouts
+* Dark Mode / Light Mode
+* Accessibility support (screen readers, dynamic text)
+* Smooth animations using Reanimated
+* Skeleton loaders
+* Empty states
+* Error states
+* Pull-to-refresh
+* Infinite scrolling
+* Optimistic UI updates
+
+---
+
+# Code Quality Requirements
+
+* Strict TypeScript
+* ESLint
+* Prettier
+* Modular folder structure
+* Reusable components
+* Custom hooks
+* Error boundaries
+* Comprehensive API error handling
+* Environment configuration
+* Unit tests for business logic
+* API integration tests
+* Clean Git commit structure
+* README with setup instructions
+* Docker support for backend
+* Seed scripts for demo data
+
+---
+
+# Deliverables
+
+The coding agent should generate:
+
+1. Complete Expo SDK 54 mobile application.
+2. React Admin Portal.
+3. Production-ready Express.js backend.
+4. MongoDB schema and seed data.
+5. REST API documentation (OpenAPI/Swagger).
+6. Realtime messaging using Socket.io.
+7. Push notification integration with Expo.
+8. Docker configuration for backend services.
+9. Deployment-ready environment configuration.
+10. A complete README covering installation, development, testing, and deployment steps.
+
+The final implementation should emphasize maintainability, scalability, security, and a clean user experience suitable for enterprise or government complaint handling systems.

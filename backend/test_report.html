@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCMS Integration Test Report</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0B0F19;
+            color: #E2E8F0;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #FFFFFF;
+            font-weight: 800;
+            border-bottom: 2px solid #1E293B;
+            padding-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .badge {
+            font-size: 14px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        .badge-success {
+            background-color: rgba(16, 185, 129, 0.15);
+            color: #10B981;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        .card {
+            background: #0F172A;
+            border: 1px solid #1E293B;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+        th, td {
+            text-align: left;
+            padding: 14px;
+            border-bottom: 1px solid #1E293B;
+        }
+        th {
+            color: #94A3B8;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.05em;
+        }
+        .pass {
+            color: #10B981;
+            font-weight: bold;
+        }
+        .fail {
+            color: #EF4444;
+            font-weight: bold;
+        }
+        .info {
+            color: #94A3B8;
+            font-size: 14px;
+        }
+        .footer {
+            text-align: center;
+            color: #64748B;
+            margin-top: 40px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        eCMS Test Automation Report
+        <span class="badge badge-success">ALL TESTS PASSED</span>
+    </h1>
+    <div class="card">
+        <h3>API Integration Verifications</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Test Case</th>
+                    <th>Result</th>
+                    <th>Info</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+                <tr>
+                    <td><strong>Citizen Authentication</strong></td>
+                    <td class="pass">PASS</td>
+                    <td class="info">Successfully logged in as citizen@ecms.gov</td>
+                    <td style="color:#64748B; font-size:12px;">2026-07-14 11:45:27</td>
+                </tr>
+        
+                <tr>
+                    <td><strong>Admin Authentication</strong></td>
+                    <td class="pass">PASS</td>
+                    <td class="info">Successfully logged in as admin@ecms.gov</td>
+                    <td style="color:#64748B; font-size:12px;">2026-07-14 11:45:28</td>
+                </tr>
+        
+                <tr>
+                    <td><strong>Fetch Complaint Categories</strong></td>
+                    <td class="pass">PASS</td>
+                    <td class="info">Found 8 categories. Picked 'Reckless Driving'</td>
+                    <td style="color:#64748B; font-size:12px;">2026-07-14 11:45:28</td>
+                </tr>
+        
+                <tr>
+                    <td><strong>File New Complaint Ticket</strong></td>
+                    <td class="pass">PASS</td>
+                    <td class="info">Ticket COMP-20260714-0010 filed successfully.</td>
+                    <td style="color:#64748B; font-size:12px;">2026-07-14 11:45:28</td>
+                </tr>
+        
+                <tr>
+                    <td><strong>Retrieve Ticket Details</strong></td>
+                    <td class="pass">PASS</td>
+                    <td class="info">Retrieved ticket details for COMP-20260714-0010</td>
+                    <td style="color:#64748B; font-size:12px;">2026-07-14 11:45:28</td>
+                </tr>
+        
+                <tr>
+                    <td><strong>Update Ticket Status (Admin)</strong></td>
+                    <td class="pass">PASS</td>
+                    <td class="info">Status updated to InProgress</td>
+                    <td style="color:#64748B; font-size:12px;">2026-07-14 11:45:28</td>
+                </tr>
+        
+                <tr>
+                    <td><strong>Post Chat Message</strong></td>
+                    <td class="pass">PASS</td>
+                    <td class="info">Message sent to complaint room successfully</td>
+                    <td style="color:#64748B; font-size:12px;">2026-07-14 11:45:28</td>
+                </tr>
+        
+                <tr>
+                    <td><strong>Retrieve Chat Messages</strong></td>
+                    <td class="pass">PASS</td>
+                    <td class="info">Found 1 messages in ticket chat timeline</td>
+                    <td style="color:#64748B; font-size:12px;">2026-07-14 11:45:28</td>
+                </tr>
+        
+                <tr>
+                    <td><strong>Verify Admin Web Portal</strong></td>
+                    <td class="pass">PASS</td>
+                    <td class="info">Active and responding on http://localhost:5173</td>
+                    <td style="color:#64748B; font-size:12px;">2026-07-14 11:45:28</td>
+                </tr>
+        
+                <tr>
+                    <td><strong>Verify Citizen Mobile Web Client</strong></td>
+                    <td class="pass">PASS</td>
+                    <td class="info">Active and responding on http://localhost:8081</td>
+                    <td style="color:#64748B; font-size:12px;">2026-07-14 11:45:28</td>
+                </tr>
+        
+            </tbody>
+        </table>
+    </div>
+    <div class="footer">
+        Generated automatically by eCMS Test Suite. Built with raw Python urllib.
+    </div>
+</body>
+</html>
+    
